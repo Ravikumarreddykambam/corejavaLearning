@@ -3,6 +3,7 @@ package com.ravi.learning.sorting;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.stream.Stream;
 
 public class ComparatorExp {
 
@@ -18,6 +19,8 @@ public class ComparatorExp {
         //System.out.println(stdlist);
         //Collections.sort(stdlist,Student.idcalucator);
         System.out.println("before name sorting ");
+        System.out.println(stdlist);
+        Collections.sort(stdlist,Student.namesorting);
         System.out.println(stdlist);
         stdlist.sort( Comparator.comparing(Student:: getName).reversed());
         System.out.println("After name sorting ");
@@ -92,4 +95,11 @@ class Student {
            return o1.id-o2.getId();
        }
    };
+
+    public static  Comparator<Student> namesorting=new Comparator<Student>() {
+        @Override
+        public int compare(Student o1, Student o2) {
+            return o1.getName().compareTo(o2.getName());
+        }
+    };
 }

@@ -5,28 +5,28 @@ import java.text.SimpleDateFormat;
 public class Singleton {
 
 
-    private static  Singleton singleton=null;
-    public String  s;
+    private static Singleton singleton = null;
+    public String s;
 
-    private  Singleton(){
-        s="creating singleton instance";
+    private Singleton() {
+        s = "creating singleton instance";
 
     }
 
-    public Singleton getInstance(){
-        if(singleton==null){
-            singleton=new Singleton();
+    public static  Singleton getInstance() {
+        if (singleton == null) {
+            singleton = new Singleton();
         }
         return singleton;
     }
-class GFE{
+
     public static void main(String[] args) {
 
-        Singleton s1=  new Singleton().getInstance();
+        Singleton s1=   Singleton.getInstance();
 
-        Singleton s2= new Singleton().getInstance();
+        Singleton s2=  Singleton.getInstance();
 
-        Singleton s3= new Singleton().getInstance();
+        Singleton s3=   Singleton.getInstance();
 
 
         System.out.println("Hashcode of s1 is "
@@ -39,4 +39,5 @@ class GFE{
     }
 }
 
-}
+
+
